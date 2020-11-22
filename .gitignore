@@ -1,0 +1,5 @@
+build/
+dist/
+ptimeit.egg-info/
+__pycache__/
+
