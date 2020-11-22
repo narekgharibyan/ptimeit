@@ -18,10 +18,10 @@ def timeit_section(section_name: str):
     >>> import time
     >>> from ptimeit import timeit_section
     >>>
-    >>> with timeit_section('section:foo'):
+    >>> with timeit_section('bar'):
     >>>     time.sleep(0.1)
     >>>
-    >>> '->>>>>>>>         105.1ms      section:foo'
+    >>> '->>>>>>>>         105.1ms      bar'
 
     """
 
