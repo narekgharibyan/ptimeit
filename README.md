@@ -3,7 +3,7 @@
 [![PythonFormat](https://img.shields.io/pypi/format/ptimeit.svg)](https://pypi.python.org/pypi/ptimeit/)
 
 # ptimeit
-simple and pretty python code profiler for measuring execution time
+pretty timeit - simple and pretty python code profiler for measuring execution time
 
 ```
 pip install ptimeit
