@@ -24,7 +24,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Lint with flake8 and iSort
+    - name: Lint with flake8 and isort
       run: |
         isort . --check-only
         flake8 .
