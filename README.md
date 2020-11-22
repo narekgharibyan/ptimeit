@@ -47,7 +47,7 @@ outputs:
 ```
 
 ---
-### nested mixture of functions and sections execution times
+### nested mixture of functions and sections
 
 ```python
 import time
