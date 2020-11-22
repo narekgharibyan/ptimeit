@@ -11,17 +11,16 @@ def timeit_section(section_name):
     global _depth
 
     _depth += 1
+    start_time = time.monotonic()
     try:
-        start_time = time.monotonic()
         yield
-
+    finally:
         elapsed_time_s = time.monotonic() - start_time
-        elapsed_time_ms = round(elapsed_time_s * 1000, 1)
+        elapsed_time_ms = round(float(elapsed_time_s * 1000), 1)
         elapsed_time_ms_str = str(elapsed_time_ms).rjust(14)
         section_full_name = '|   ' * _depth + section_name
         print(f'->>>>>>>>{elapsed_time_ms_str}ms      {section_full_name}')
 
-    finally:
         _depth -= 1
 
 
