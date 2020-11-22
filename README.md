@@ -1,4 +1,6 @@
 [![BuildBadge](https://github.com/narekgharibyan/ptimeit/workflows/Build/badge.svg)](https://github.com/narekgharibyan/ptimeit/actions)
+[![PyPIVersion](https://img.shields.io/pypi/v/ptimeit.svg)](https://pypi.python.org/pypi/ptimeit/)
+[![PythonFormat](https://img.shields.io/pypi/format/ptimeit.svg)](https://pypi.python.org/pypi/ptimeit/)
 
 # ptimeit
 simple and pretty python code profiler for measuring execution time
