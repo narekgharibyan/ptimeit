@@ -1,6 +1,7 @@
 flake8>=3.8.4
 isort>=5.6.4
 mock>=4.0.2
+pre-commit>=2.9.0
 pytest>=6.1.2
 setuptools>=50.3.2
 twine>=3.2.0
