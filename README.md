@@ -43,7 +43,7 @@ from ptimeit import timeit_function
 def foo():
     time.sleep(0.1)
 
-@timeit_function('bar', should_print=lambda t: t > 500)
+@timeit_function('bar', condition=lambda t: t > 500)
 def bar():
     time.sleep(1)
 
@@ -74,8 +74,7 @@ foo()
 
 outputs:
 ```
-->>>>>>>>         103.3ms      foo()
-->>>>>>>>>>>>>>>>>>>>>>>>      Additional data: This is a string
+->>>>>>>>         103.3ms      foo() - This is a string
 ```
 
 ---
@@ -93,7 +92,7 @@ outputs:
 ```
 ->>>>>>>>         105.1ms      bar
 ```
-It is also possible to use conditional `should_print` function and `additional_data_to_print` the same way as in `timeit_function`.
+It is also possible to use conditional `condition` function and `additional_data_to_print` the same way as in `timeit_function`.
 
 ---
 ### nested mixture of functions and sections
