@@ -46,9 +46,9 @@ def timeit_section(
             elapsed_time_ms_str = str(elapsed_time_ms).rjust(14)
             offset = '|   ' * _depth
             section_full_name = offset + section_name
-            to_print=f'->>>>>>>>{elapsed_time_ms_str}ms      {section_full_name}'
+            to_print = f'->>>>>>>>{elapsed_time_ms_str}ms      {section_full_name}'
             if additional_data_to_print:
-                to_print += f'- {additional_data_to_print}'
+                to_print += f' - {additional_data_to_print}'
 
             print(to_print)
 
