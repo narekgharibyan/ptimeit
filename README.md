@@ -58,13 +58,13 @@ No output for `foo` - measured time needs to be over 500ms to be printed.
 ->>>>>>>>        1003.1ms      bar()
 ```
 
-Adding additional data
+Adding extra data
 ```python
 import time
 from ptimeit import timeit_function
 
 
-@timeit_function('foo', additional_data_to_print="This is a string")
+@timeit_function('foo', extra_data_to_print="This is a string")
 def foo():
     time.sleep(0.1)
 
@@ -92,7 +92,7 @@ outputs:
 ```
 ->>>>>>>>         105.1ms      bar
 ```
-It is also possible to use conditional `condition` function and `additional_data_to_print` the same way as in `timeit_function`.
+It is also possible to use conditional `condition` function and `extra_data_to_print` the same way as in `timeit_function`.
 
 ---
 ### nested mixture of functions and sections

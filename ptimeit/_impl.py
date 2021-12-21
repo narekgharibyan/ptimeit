@@ -11,15 +11,14 @@ _depth = -1
 def timeit_section(
     section_name: str,
     condition: Callable[[float], bool] = None,
-    additional_data_to_print: str = None
+    extra_data_to_print: str = None
 ):
     """
     Returns a context manager for profiling code section execution time.
 
     :param section_name: section name to use in the output record.
     :param condition: a function to determine whether to print the timings.
-    :param additional_data_to_print: allows for passing in the additional data
-                                     to print with the timings.
+    :param extra_data_to_print: allows for passing in the extra data to print with the timings.
 
     example: the code below outputs
 
@@ -47,8 +46,8 @@ def timeit_section(
             offset = '|   ' * _depth
             section_full_name = offset + section_name
             to_print = f'->>>>>>>>{elapsed_time_ms_str}ms      {section_full_name}'
-            if additional_data_to_print:
-                to_print += f' - {additional_data_to_print}'
+            if extra_data_to_print:
+                to_print += f' - {extra_data_to_print}'
 
             print(to_print)
 
@@ -58,15 +57,14 @@ def timeit_section(
 def timeit_function(
     function_name: str,
     condition: Callable[[float], bool] = None,
-    additional_data_to_print: str = None
+    extra_data_to_print: str = None
 ):
     """
     Returns a function decorator for profiling code section execution time.
 
     :param function_name: function name to use in the output record.
     :param condition: a function to determine whether to print the timings.
-    :param additional_data_to_print: allows for passing in the additional data
-                                     to print with the timings.
+    :param extra_data_to_print: allows for passing in the extra data to print with the timings.
 
     example: the code below outputs
 
@@ -88,7 +86,7 @@ def timeit_function(
     def decorator(func):
         @functools.wraps(func)
         def timeit_wrapper(*args, **kwargs):
-            with timeit_section(f'{function_name}()', condition, additional_data_to_print):
+            with timeit_section(f'{function_name}()', condition, extra_data_to_print):
                 return func(*args, **kwargs)
 
         return timeit_wrapper
