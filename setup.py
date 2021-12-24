@@ -6,7 +6,7 @@ with open('README.md', 'r') as f_in:
 
 setuptools.setup(
     name='ptimeit',
-    version='0.1.1',
+    version='0.1.2',
     author='Narek Gharibyan',
     author_email='narekgharibyan@gmail.com',
     description='Simple and pretty python code profiler for measuring execution time.',

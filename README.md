@@ -32,6 +32,51 @@ outputs:
 ->>>>>>>>         102.7ms      foo()
 ```
 
+Adding a conditional function that determines if something is printed. The function receives elapsed time in milliseconds as an input and is expected to return a boolean.
+
+```python
+import time
+from ptimeit import timeit_function
+
+
+@timeit_function('foo', lambda t: t > 500)
+def foo():
+    time.sleep(0.1)
+
+@timeit_function('bar', condition=lambda t: t > 500)
+def bar():
+    time.sleep(1)
+
+foo()
+bar()
+```
+
+No output for `foo` - measured time needs to be over 500ms to be printed.
+
+`bar` outputs:
+```
+->>>>>>>>        1003.1ms      bar()
+```
+
+Adding extra data
+```python
+import time
+from ptimeit import timeit_function
+
+
+@timeit_function('foo', extra_data_to_print="This is a string")
+def foo():
+    time.sleep(0.1)
+
+
+foo()
+```
+
+outputs:
+```
+->>>>>>>>         103.3ms      foo() - This is a string
+```
+
 ---
 
 ### code section execution time
@@ -47,6 +92,7 @@ outputs:
 ```
 ->>>>>>>>         105.1ms      bar
 ```
+It is also possible to use conditional `condition` function and `extra_data_to_print` the same way as in `timeit_function`.
 
 ---
 ### nested mixture of functions and sections
